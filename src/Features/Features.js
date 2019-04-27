@@ -9,11 +9,11 @@ class Features extends Component{
               const selectedClass = item.name === this.props.selected[key].name ? 'feature__selected' : '';
               const featureClass = 'feature__option ' + selectedClass;
               return (
-              <Option featureName={key} featureClass={featureClass} updateFeature={this.props.updateFeature}  item={item} index={index} /> 
+              <Option featureName={key} featureClass={featureClass} updateFeature={this.props.updateFeature} key={`${index}_${key}`} item={item} index={index} /> 
               )
             });
             return <div className="feature" key={key}>
-              <div className="feature__name">{key}</div>
+              <div key={key} className="feature__name">{key}</div>
               <ul className="feature__list">
                 { options }
               </ul>
